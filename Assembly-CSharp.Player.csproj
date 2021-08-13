@@ -61,6 +61,7 @@
      <Compile Include="Assets\Generated\Game\GameAttribute.cs" />
      <Compile Include="Assets\Scripts\ECS\System\InitializeAppleSystem.cs" />
      <Compile Include="Assets\Generated\Game\Components\GameAccelerationComponent.cs" />
+     <Compile Include="Assets\Scripts\ECS\Components\GameOverComponent.cs" />
      <Compile Include="Assets\Generated\Input\InputAttribute.cs" />
      <Compile Include="Assets\Scripts\ECS\System\MoveSystem.cs" />
      <Compile Include="Assets\Generated\Game\GameEntity.cs" />
@@ -86,6 +87,7 @@
      <Compile Include="Assets\Scripts\EatTaleIncrementer.cs" />
      <Compile Include="Assets\Scripts\ECS\GameSetup.cs" />
      <Compile Include="Assets\Scripts\ECS\System\DestroySystem.cs" />
+     <Compile Include="Assets\Generated\Game\Components\GameGameOverComponent.cs" />
      <Compile Include="Assets\Generated\Game\Components\GameGameSetupComponent.cs" />
      <Compile Include="Assets\Generated\Game\Components\GamePositionComponetComponent.cs" />
      <Compile Include="Assets\Generated\Game\Components\GameViewComponent.cs" />
@@ -108,8 +110,6 @@
      <Compile Include="Assets\Scripts\ECS\GameController.cs" />
      <Compile Include="Assets\Generated\Game\GameComponentsLookup.cs" />
      <Compile Include="Assets\Generated\Input\InputMatcher.cs" />
-     <Compile Include="Assets\Scripts\ECS\Components\GameOverComponent.cs" />
-     <Compile Include="Assets\Generated\Game\Components\GameGameOverComponent.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

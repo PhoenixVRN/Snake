@@ -59,6 +59,7 @@ public class EatSystem : ReactiveSystem<GameEntity>
             
             var entityGO = _contexts.game.CreateEntity();
             entityGO.isGameOver = true;
+              entity.isDestroy = true;
         }
     }
 }
