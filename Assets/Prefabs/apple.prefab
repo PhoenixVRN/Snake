@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1203225389641251460}
   - component: {fileID: 8236958652794007997}
   - component: {fileID: -5628039706099776298}
-  - component: {fileID: 4536439353721032397}
   m_Layer: 0
   m_Name: apple
-  m_TagString: Untagged
+  m_TagString: Apple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722508026721059028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.75424, y: -0.704162, z: 0}
+  m_LocalPosition: {x: -7, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -110,17 +109,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7078757, y: 0.7235093}
   m_EdgeRadius: 0
---- !u!114 &4536439353721032397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5722508026721059028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2475b79712eeaec41a5ce0fbd7ce86ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftUpBound: {fileID: 0}
-  rightDownBound: {fileID: 0}

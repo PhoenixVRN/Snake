@@ -25,13 +25,15 @@ public class GameController : MonoBehaviour
     {
         return new Feature("Game")
                 .Add(new InitializePlayerSystem(contexts))
-                
+                .Add(new InitializeAppleSystem(contexts))
                 
                 .Add(new InstantiateViewSystem(contexts))
             
                 .Add(new InputSystem(contexts))
                 .Add(new ReplaceAccelerationSystem(contexts))
                 .Add(new MoveSystem(contexts))
+                .Add(new EatSystem(contexts))
+                .Add(new DestroySystem(contexts))
             ;
     }
 }

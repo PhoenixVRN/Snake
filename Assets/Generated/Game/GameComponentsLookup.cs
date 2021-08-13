@@ -9,26 +9,32 @@
 public static class GameComponentsLookup {
 
     public const int Acceleration = 0;
-    public const int DirectionTravel = 1;
-    public const int GameSetup = 2;
-    public const int Health = 3;
-    public const int InitialPosition = 4;
-    public const int Input = 5;
-    public const int Player = 6;
-    public const int PositionComponet = 7;
-    public const int Resource = 8;
-    public const int SpeedRun = 9;
-    public const int View = 10;
+    public const int Apple = 1;
+    public const int Collision = 2;
+    public const int Destroy = 3;
+    public const int DirectionTravel = 4;
+    public const int GameOver = 5;
+    public const int GameSetup = 6;
+    public const int Health = 7;
+    public const int InitialPosition = 8;
+    public const int Player = 9;
+    public const int PositionComponet = 10;
+    public const int Resource = 11;
+    public const int SpeedRun = 12;
+    public const int View = 13;
 
-    public const int TotalComponents = 11;
+    public const int TotalComponents = 14;
 
     public static readonly string[] componentNames = {
         "Acceleration",
+        "Apple",
+        "Collision",
+        "Destroy",
         "DirectionTravel",
+        "GameOver",
         "GameSetup",
         "Health",
         "InitialPosition",
-        "Input",
         "Player",
         "PositionComponet",
         "Resource",
@@ -38,7 +44,11 @@ public static class GameComponentsLookup {
 
     public static readonly System.Type[] componentTypes = {
         typeof(AccelerationComponent),
+        typeof(AppleComponent),
+        typeof(CollisionComponent),
+        typeof(DestroyComponent),
         typeof(DirectionTravelComponent),
+        typeof(GameOverComponent),
         typeof(GameSetupComponent),
         typeof(HealthComponent),
         typeof(InitialPositionComponent),
