@@ -38,13 +38,11 @@ public class EatSystem : ReactiveSystem<GameEntity>
                 newEntity.AddResource(_contexts.game.gameSetup.value.laser);
 
                 newEntity.AddInitialPosition(
-                    second.transform.position +
-                    new Vector3(Random.Range((int)_contexts.game.gameSetup.value.leftUpBound.position.x,
-                            (int)_contexts.game.gameSetup.value.rightDownBound.position.x),
-                        Random.Range((int)_contexts.game.gameSetup.value.leftUpBound.position.y,
-                            (int)_contexts.game.gameSetup.value.rightDownBound.position.y), 0f));
-                
-            
+                    second.transform.position =
+                    new Vector3(Random.Range((int)-7, (int)7),
+                        Random.Range((int)-3, (int)3), 0f));
+
+                firstEntity.score.value++;
 
 
                 secondEntity.isDestroy = true;

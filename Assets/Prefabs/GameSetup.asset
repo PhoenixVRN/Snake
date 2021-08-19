@@ -15,8 +15,8 @@ MonoBehaviour:
   player: {fileID: 5770953488478204472, guid: ec3d32ba4605c0541b647d5080b35895, type: 3}
   laser: {fileID: 5722508026721059028, guid: cc055fbc47a84264098a9da9f69f6794, type: 3}
   Wall: {fileID: 1693663580867076977, guid: 132ce7e9e67792b48ae7f11052176f32, type: 3}
-  leftUpBound: {fileID: 639520086212881524, guid: 3db80102087936e4b8339043616e90ab, type: 3}
-  rightDownBound: {fileID: 4793786983196644112, guid: 2f5e7b5537f221945a6378a848a57b33, type: 3}
+  leftUpBound: {fileID: 4061263478208257294, guid: 3db80102087936e4b8339043616e90ab, type: 3}
+  rightDownBound: {fileID: 5654505158183563533, guid: 2f5e7b5537f221945a6378a848a57b33, type: 3}
   rotationSpeed: 180
   playerMovementSpeed: 5
   laserSpeed: 10

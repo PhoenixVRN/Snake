@@ -17,6 +17,7 @@ public class InitializePlayerSystem : IInitializeSystem
         entity.AddAcceleration(Vector3.zero);
         entity.AddSpeedRun(0.5f);
         entity.AddDirectionTravel(1);
+        entity.AddScore(0);
 
     }
 }
