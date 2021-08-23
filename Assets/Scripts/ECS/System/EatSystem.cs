@@ -2,27 +2,20 @@
 using UnityEngine;
 using Entitas;
 
-public class EatSystem : ReactiveSystem<GameEntity>
+public class EatSystem : IExecuteSystem
 {
     private Contexts _contexts;
-    public EatSystem(Contexts contexts) : base(contexts.game)
+    private IGroup<GameEntity> _group;
+    public EatSystem(Contexts contexts)
     {
         _contexts = contexts;
+        _group = contexts.game.GetGroup(GameMatcher.AllOf(
+            GameMatcher.Collision));
     }
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    public void Execute()
     {
-        return context.CreateCollector(GameMatcher.Collision);
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasCollision;
-    }
-
-    protected override void Execute(List<GameEntity> entities)
-    {
-        foreach (var entity in entities)
+        foreach (var entity in _group)
         {
             
             var first = entity.collision.first;
@@ -30,34 +23,52 @@ public class EatSystem : ReactiveSystem<GameEntity>
 
             var firstEntity = _contexts.game.GetEntitiesWithView(first).SingleEntity();
             var S = _contexts.game.GetEntitiesWithView(second);
+            if (second.gameObject.GetComponent<EmitTriggerEntityBehaviour>())
+            {
+                entity.isDestroy = true; 
+                return;
+            }
             if (S.Count > 0)
             {
+                // находим entity на яблочко.
                 var secondEntity = _contexts.game.GetEntitiesWithView(second).SingleEntity();
+                //создаем новое яблочко.
                 var newEntity = _contexts.game.CreateEntity();
                 newEntity.isApple = true;
                 newEntity.AddResource(_contexts.game.gameSetup.value.laser);
 
                 newEntity.AddInitialPosition(
-                    second.transform.position =
                     new Vector3(Random.Range((int)-7, (int)7),
                         Random.Range((int)-3, (int)3), 0f));
 
                 firstEntity.score.value++;
+                
 
-
+                var entityTail = _contexts.game.CreateEntity();
+//                entityTail.isPlayer = true;
+                entityTail.AddResource(_contexts.game.gameSetup.value.player);
+                entityTail.AddInitialPosition(second.transform.position);
+                entityTail.AddAcceleration(second.transform.position);
+                entityTail.AddSpeedRun(0.5f);
+                entityTail.AddDirectionTravel(1);
+                entityTail.isTail = true;
+                
+                var data = firstEntity.dataTile.DataTile;
+                data.Add(entityTail);
+                
                 secondEntity.isDestroy = true;
                 entity.isDestroy = true;
 
-                   return;
+//                   return;
                 
             }
  //           var secondEntity = _contexts.game.GetEntitiesWithView(second).SingleEntity();
          
 
             
-            var entityGO = _contexts.game.CreateEntity();
-            entityGO.isGameOver = true;
-              entity.isDestroy = true;
+            // var entityGO = _contexts.game.CreateEntity();
+            // entityGO.isGameOver = true;
+            //   entity.isDestroy = true;
         }
     }
 }

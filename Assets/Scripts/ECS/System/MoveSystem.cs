@@ -14,8 +14,9 @@ public class MoveSystem : IExecuteSystem
 
     public void Execute()
     {
-        foreach(var entity in _group)
+        foreach (var entity in _group)
         {
+            var enityHead = entity.view.value.transform.position;
             entity.speedRun.value -= Time.deltaTime;
             if (entity.speedRun.value <= 0)
             {
@@ -51,8 +52,19 @@ public class MoveSystem : IExecuteSystem
                     view.transform.position = position;
                     entity.speedRun.value = 0.5f;
                 }
-                
+
+             var   dataTail = entity.dataTile.DataTile;
+             foreach (var tile in dataTail)
+             {
+                 var secondData = tile.view.value.transform.position;
+                 var view = tile.view.value;
+                 var position = view.transform.position;
+                 view.transform.position = enityHead;
+                 enityHead = secondData;
+             }
+
             }
+            
             
         }
     }

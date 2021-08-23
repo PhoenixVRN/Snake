@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
                 .Add(new InstantiateViewSystem(contexts))
             
                 .Add(new InputSystem(contexts))
-                .Add(new ReplaceAccelerationSystem(contexts))
+  //              .Add(new ReplaceAccelerationSystem(contexts))
                 .Add(new MoveSystem(contexts))
                 .Add(new EatSystem(contexts))
                 .Add(new DestroySystem(contexts))

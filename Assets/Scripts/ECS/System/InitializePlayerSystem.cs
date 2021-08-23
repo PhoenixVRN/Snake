@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Entitas;
 
@@ -18,6 +19,12 @@ public class InitializePlayerSystem : IInitializeSystem
         entity.AddSpeedRun(0.5f);
         entity.AddDirectionTravel(1);
         entity.AddScore(0);
+        
+//        var entityData = _contexts.game.CreateEntity();
+       entity.AddDataTile(new List<GameEntity>());
+       var data = entity.dataTile.DataTile;
+//       data.Add(entity);
+        
 
     }
 }
